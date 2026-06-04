@@ -1,0 +1,10 @@
+{
+  "Bandeja Paisa": {"price": 16.00, "default_qty": 10, "available": 10},
+  "Sancocho": {"price": 14.00, "default_qty": 8, "available": 8},
+  "Arroz con Pollo": {"price": 13.00, "default_qty": 12, "available": 12},
+  "Frijoles": {"price": 12.00, "default_qty": 10, "available": 10},
+  "Empanadas": {"price": 8.00, "default_qty": 20, "available": 20},
+  "Arepas": {"price": 5.00, "default_qty": 25, "available": 25},
+  "Arroz con leche": {"price": 5.00, "default_qty": 15, "available": 15},
+  "Jugos": {"price": 4.00, "default_qty": 20, "available": 20}
+}
