@@ -3,7 +3,6 @@ import re
 from datetime import datetime
 from pathlib import Path
 from typing import Dict
-
 from agents import llm, menu as menu_mod, whatsapp
 
 ORDERS_FILE = Path(__file__).parent.parent / "data" / "orders.json"
@@ -236,7 +235,7 @@ def daily_summary() -> str:
             f"Mañana será mejor! 💪"
         )
     else:
-        item_counts: dict[str, int] = {}
+        item_counts: Dict[str, int] = {}
         for o in today_orders:
             for i in o["items"]:
                 item_counts[i["name"]] = item_counts.get(i["name"], 0) + i["qty"]
