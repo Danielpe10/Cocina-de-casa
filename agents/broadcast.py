@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from typing import List
 from agents import whatsapp, menu as menu_mod
 
 CUSTOMERS_FILE = Path(__file__).parent.parent / "data" / "customers.json"
@@ -19,7 +20,7 @@ def add_customer(phone: str, is_regular: bool = False) -> None:
             json.dump(customers, f, indent=2)
 
 
-def broadcast_to(phones: list[str], message: str) -> dict:
+def broadcast_to(phones: List[str], message: str) -> dict:
     results = {}
     for phone in phones:
         try:

@@ -1,7 +1,8 @@
+from typing import Optional
 from agents import menu as menu_mod
 
 
-def check_low_stock(threshold: int = 3) -> str | None:
+def check_low_stock(threshold: int = 3) -> Optional[str]:
     """Return an owner alert message if items are running low, else None."""
     low = menu_mod.get_low_stock(threshold)
     if not low:
@@ -13,7 +14,7 @@ def check_low_stock(threshold: int = 3) -> str | None:
     return "\n".join(lines)
 
 
-def urgency_message() -> str | None:
+def urgency_message() -> Optional[str]:
     """Return a customer-facing urgency broadcast for low-stock items."""
     low = menu_mod.get_low_stock(threshold=4)
     if not low:

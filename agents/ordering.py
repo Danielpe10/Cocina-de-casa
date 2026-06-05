@@ -2,13 +2,14 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
+from typing import Dict
 
 from agents import llm, menu as menu_mod, whatsapp
 
 ORDERS_FILE = Path(__file__).parent.parent / "data" / "orders.json"
 
 # In-memory conversation state: phone -> {stage, pending_order}
-_sessions: dict[str, dict] = {}
+_sessions: Dict[str, dict] = {}
 
 
 def _load_orders() -> dict:

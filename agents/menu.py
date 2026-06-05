@@ -1,6 +1,7 @@
 import json
 import os
 from pathlib import Path
+from typing import Optional
 
 MENU_FILE = Path(__file__).parent.parent / "data" / "menu.json"
 
@@ -63,7 +64,7 @@ def format_menu_en() -> str:
     return "\n".join(lines)
 
 
-def _find_key(menu: dict, name: str) -> str | None:
+def _find_key(menu: dict, name: str) -> Optional[str]:
     name_lower = name.lower()
     for key in menu:
         if key.lower() == name_lower or name_lower in key.lower():
