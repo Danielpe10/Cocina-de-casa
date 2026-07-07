@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(255,255,255,0.06), transparent 45%),
+      linear-gradient(135deg, #1a0f0a 0%, #3d1f0f 45%, #7a2e12 100%);
+    color: #fff8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 64px;
+  }
+
+  .badge-row { display:flex; gap:12px; }
+  .badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .dot-icon { width:8px; height:8px; border-radius:50%; background:#ffb27a; display:inline-block; }
+
+  .content { max-width: 920px; }
+  .eyebrow {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffb27a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: 78px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .subtitle {
+    font-size: 25px;
+    font-weight: 400;
+    color: #ffe4cf;
+    line-height: 1.45;
+  }
+
+  .icon-row { display:flex; align-items:center; gap:18px; margin-bottom: 20px; }
+  .plate-icon svg { display:block; }
+
+  .footer {
+    display:flex; justify-content:space-between; align-items:center;
+    font-size: 18px; color: #ffd9bd; font-weight:600;
+  }
+</style>
+</head>
+<body>
+  <div class="badge-row">
+    <div class="badge"><span class="dot-icon"></span>Track 3 — Unicorn Track</div>
+    <div class="badge"><span class="dot-icon"></span>Fireworks AI</div>
+    <div class="badge"><span class="dot-icon"></span>Gemma</div>
+  </div>
+
+  <div class="content">
+    <div class="icon-row">
+      <span class="plate-icon">
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="36" cy="36" r="26" stroke="#ffe4cf" stroke-width="3"/>
+          <circle cx="36" cy="36" r="17" stroke="#ffe4cf" stroke-width="2" opacity="0.6"/>
+          <path d="M14 14 V32 M14 32 C14 36 18 36 18 32 V14 M18 32 V58" stroke="#ffb27a" stroke-width="3" stroke-linecap="round"/>
+          <path d="M58 14 V40 C58 44 54 46 54 46 V58 M58 14 L58 46" stroke="#ffb27a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </div>
+    <div class="eyebrow">AI Restaurant Operator</div>
+    <h1>Cocina de Casa</h1>
+    <div class="subtitle">
+      Pedidos por WhatsApp, marketing en redes y gestión de inventario —
+      un agente de IA que opera un restaurante real, 24/7, corriendo sobre
+      Gemma en AMD Developer Cloud.
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>AMD Developer Hackathon: ACT II</div>
+    <div>Winston-Salem, NC</div>
+  </div>
+</body>
+</html>
