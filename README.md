@@ -14,7 +14,7 @@ El cliente escribe por WhatsApp:
 "Quiero una bandeja paisa para las 6pm, entrega en 123 Main St, pago con Zelle"
 ```
 El sistema:
-1. Entiende el pedido con Google Gemini
+1. Entiende el pedido con Gemma (vía Fireworks AI, hardware AMD)
 2. Genera un ID único: **CDC-001**
 3. Descuenta del inventario automáticamente
 4. Confirma al cliente con resumen completo
@@ -55,7 +55,7 @@ cocina-de-casa/
 ├── config.py            # Variables de entorno
 ├── webhook.py           # Webhook WhatsApp + endpoints HTTP
 ├── agents/
-│   ├── llm.py           # Google Gemini (gemini-1.5-flash)
+│   ├── llm.py           # Fireworks AI — Gemma (hardware AMD)
 │   ├── ordering.py      # Lógica de pedidos, CDC-XXX, notificaciones
 │   ├── scheduler.py     # 8 tareas programadas (APScheduler)
 │   ├── broadcast.py     # Broadcasts a clientes regulares y nuevos
@@ -69,7 +69,7 @@ cocina-de-casa/
     └── customers.json   # Regulares y nuevos leads
 ```
 
-**Stack:** Python 3.11+ · Flask · APScheduler · Google Gemini · Meta Cloud API
+**Stack:** Python 3.11+ · Flask · APScheduler · Fireworks AI (Gemma, hardware AMD) · Meta Cloud API
 
 ---
 
@@ -107,8 +107,9 @@ META_PAGE_ACCESS_TOKEN=tu_page_access_token
 FACEBOOK_PAGE_ID=tu_page_id
 INSTAGRAM_BUSINESS_ACCOUNT_ID=tu_ig_account_id
 
-# Google Gemini
-GEMINI_API_KEY=tu_gemini_api_key
+# Fireworks AI (Gemma, hosted on AMD hardware)
+FIREWORKS_API_KEY=tu_fireworks_api_key
+FIREWORKS_MODEL=accounts/fireworks/models/gemma-3-27b-it
 
 # Número WhatsApp del dueño (solo dígitos, sin +)
 OWNER_WHATSAPP=13365550001
@@ -120,6 +121,12 @@ python main.py
 ```
 
 El servidor arranca en `http://localhost:8080`.
+
+### 5. Correr con Docker (recomendado)
+```bash
+docker build -t cocina-de-casa .
+docker run --env-file .env -p 8080:8080 cocina-de-casa
+```
 
 ---
 
@@ -172,7 +179,7 @@ Configura las mismas variables de `.env` como **Environment Variables** en tu pl
 | `META_PAGE_ACCESS_TOKEN` | Meta Business Suite → Configuración → Acceso a la API |
 | `FACEBOOK_PAGE_ID` | URL de tu página de Facebook |
 | `INSTAGRAM_BUSINESS_ACCOUNT_ID` | Meta Business Suite → Instagram |
-| `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com) → Get API Key |
+| `FIREWORKS_API_KEY` | [Fireworks AI](https://fireworks.ai) → API Keys (incluido en el AMD AI Developer Program) |
 
 ---
 

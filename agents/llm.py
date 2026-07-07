@@ -1,14 +1,20 @@
-import google.generativeai as genai
+from openai import OpenAI
 import config
 
-genai.configure(api_key=config.GEMINI_API_KEY)
-_model = genai.GenerativeModel("gemini-2.5-flash")
+_client = OpenAI(api_key=config.FIREWORKS_API_KEY, base_url=config.FIREWORKS_BASE_URL)
 
 
 def ask(prompt: str, system: str = "") -> str:
-    full_prompt = f"{system}\n\n{prompt}" if system else prompt
-    response = _model.generate_content(full_prompt)
-    return response.text.strip()
+    messages = []
+    if system:
+        messages.append({"role": "system", "content": system})
+    messages.append({"role": "user", "content": prompt})
+
+    response = _client.chat.completions.create(
+        model=config.FIREWORKS_MODEL,
+        messages=messages,
+    )
+    return response.choices[0].message.content.strip()
 
 
 SYSTEM_VOICE = (

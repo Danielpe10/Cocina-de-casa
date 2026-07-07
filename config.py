@@ -13,8 +13,10 @@ META_PAGE_ACCESS_TOKEN = os.getenv("META_PAGE_ACCESS_TOKEN", "")
 FACEBOOK_PAGE_ID = os.getenv("FACEBOOK_PAGE_ID", "")
 INSTAGRAM_BUSINESS_ACCOUNT_ID = os.getenv("INSTAGRAM_BUSINESS_ACCOUNT_ID", "")
 
-# Google Gemini
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+# Fireworks AI (Gemma, hosted on AMD hardware)
+FIREWORKS_API_KEY = os.getenv("FIREWORKS_API_KEY", "")
+FIREWORKS_MODEL = os.getenv("FIREWORKS_MODEL", "accounts/fireworks/models/gemma-3-27b-it")
+FIREWORKS_BASE_URL = "https://api.fireworks.ai/inference/v1"
 
 # Owner WhatsApp (digits only, no +)
 OWNER_WHATSAPP = os.getenv("OWNER_WHATSAPP", "")

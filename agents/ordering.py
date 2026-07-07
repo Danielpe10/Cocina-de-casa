@@ -47,7 +47,7 @@ def handle_message(from_phone: str, message_body: str) -> str:
         f"{k} (${v['price']:.0f})" for k, v in available.items()
     )
 
-    # Parse intent with Gemini
+    # Parse intent with Gemma (via Fireworks AI)
     parse_prompt = (
         f"El cliente envió: '{body}'\n"
         f"Menú disponible: {available_str}\n\n"
